@@ -119,11 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!4 &194493402 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7415219473976165014, guid: 3629aa1821bd06d4aadb2d55e05eca9e, type: 3}
-  m_PrefabInstance: {fileID: 680567649}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &680567649
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -243,7 +238,9 @@ MonoBehaviour:
   - {fileID: 5194334439060997416, guid: e2b772f4159ad30419ccc6c4061d9daa, type: 3}
   - {fileID: 1354395105732643904, guid: b351939b1e4793949b9adfe3079c8d05, type: 3}
   inner:
-  - {fileID: 4098883840957999848, guid: e3ff78bdfad34274aa2d7bef3400dd9b, type: 3}
+  - {fileID: 5395321109705870326, guid: 3812e77738be50241a3539b333401ce0, type: 3}
+  enemy:
+  - {fileID: 3218344007378055972, guid: 2c360779d0377d042bd61f5292d47580, type: 3}
   block: {fileID: 2210340430208544693, guid: 6e42d0cdfacadea46bfa635a03e7d6bb, type: 3}
   rooms: []
   waitTime: 3
@@ -257,13 +254,18 @@ Transform:
   m_GameObject: {fileID: 873864621}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4927146, y: -3.4685771, z: -0.055416033}
+  m_LocalPosition: {x: 15.271362, y: -34.857666, z: -0.055416033}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 194493402}
+  - {fileID: 2067337752}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &2067337752 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7415219473976165014, guid: 3629aa1821bd06d4aadb2d55e05eca9e, type: 3}
+  m_PrefabInstance: {fileID: 680567649}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
