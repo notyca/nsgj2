@@ -1,5 +1,23 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+
+public struct Room
+{
+    public enum RoomTypes
+    {
+        ENEMY,
+        SHOP,
+        BOSS
+    }
+
+    public bool up;
+    public bool down;
+    public bool left;
+    public bool right;
+
+    public RoomTypes roomType;
+}
 
 public class RoomTemplates : MonoBehaviour
 {
@@ -7,9 +25,13 @@ public class RoomTemplates : MonoBehaviour
     public GameObject[] top;
     public GameObject[] left;
     public GameObject[] right;
+    public GameObject[] inner;
+    public GameObject[] enemy;
 
     public GameObject block;
     public List<GameObject> rooms;
+
+    public Dictionary<Vector2, Room> roomPositions;
 
     public float waitTime;
     private bool spawnedBoss;
