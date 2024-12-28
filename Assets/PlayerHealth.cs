@@ -39,6 +39,7 @@ public class PlayerHealth : MonoBehaviour
         {
             HurtPlayer();
             hitPointsUI.ShowHitPoints(hp);
+            GetComponent<PlayerMovement>().DisableMovement();
         }
     }
 }
