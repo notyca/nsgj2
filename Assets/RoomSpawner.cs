@@ -12,6 +12,7 @@ public class RoomSpawner : MonoBehaviour
 
     private RoomTemplates templates;
     private int rand;
+    private int rand2;
     public bool spawned = false;
     public float waitTime = 4f;
     private Transform Vedal;
