@@ -54,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 60
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -119,10 +119,10 @@ TextureImporter:
       name: placeholder art_0
       rect:
         serializedVersion: 2
-        x: 44
-        y: 446
-        width: 893
-        height: 563
+        x: 45
+        y: 447
+        width: 891
+        height: 561
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,10 +141,10 @@ TextureImporter:
       name: placeholder art_1
       rect:
         serializedVersion: 2
-        x: 61
-        y: 292
-        width: 59
-        height: 82
+        x: 62
+        y: 276
+        width: 56
+        height: 74
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,11 +159,209 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: placeholder art_2
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 274
+        width: 56
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75e995bdde2549b42a230602378dce7f
+      internalID: -367681905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder art_3
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 273
+        width: 57
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 582716bd376bf2a4fa15a1eab1857f9e
+      internalID: -1194665094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder art_4
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 274
+        width: 57
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 175d111b82ba7214283a71363f62e663
+      internalID: 1667448708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder art_5
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 289
+        width: 54
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7368b1ad971e70740b5f38975ef27490
+      internalID: 1732455447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder art_6
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 297
+        width: 37
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02387b4fd34ea6d47a0d2bd70be934eb
+      internalID: 774448630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder art_7
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 71
+        width: 49
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dd6c24fb3f4b674abc1a2aac1c05c7c
+      internalID: 606694569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder art_8
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 77
+        width: 89
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30720ff7e296d8e48aec27c22f29e89f
+      internalID: -239472565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder art_9
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 66
+        width: 83
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bae929d5d0f12f41a49ad383faf0467
+      internalID: -802718821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder art_10
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 66
+        width: 49
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1f639c802c6cb847a48150a8632981c
+      internalID: -47019860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c5e42bdc407267f47b9c2988c5faac06
     internalID: 0
     vertices: []
     indices: 
@@ -175,6 +373,15 @@ TextureImporter:
     nameFileIdTable:
       placeholder art_0: 4199569623406810356
       placeholder art_1: 8649865121833839671
+      placeholder art_10: -47019860
+      placeholder art_2: -367681905
+      placeholder art_3: -1194665094
+      placeholder art_4: 1667448708
+      placeholder art_5: 1732455447
+      placeholder art_6: 774448630
+      placeholder art_7: 606694569
+      placeholder art_8: -239472565
+      placeholder art_9: -802718821
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
