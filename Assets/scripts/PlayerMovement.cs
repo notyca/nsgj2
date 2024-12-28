@@ -1,15 +1,21 @@
+using System.Runtime.CompilerServices;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private Animator animator;
+
     private Rigidbody2D rb;
     private Vector2 inputVector;
     private float speed = 5.0f;
 
+    private Vector2 direction = Vector2.up;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -45,9 +51,14 @@ public class PlayerMovement : MonoBehaviour
         if (inputVector != Vector2.zero)
         {
             inputVector = inputVector.normalized;
+
+            direction = inputVector;
         }
 
         // move player
         rb.linearVelocity = inputVector * speed;
+
+        animator.SetFloat("horizontal", direction.x);
+        animator.SetFloat("vertical", direction.y);
     }
 }
