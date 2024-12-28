@@ -772,7 +772,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 606694569, guid: 9a7828814abacfb469b8e4f55a8e30bd, type: 3}
+  m_Sprite: {fileID: 1242118279, guid: 9a7828814abacfb469b8e4f55a8e30bd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -780,7 +780,7 @@ SpriteRenderer:
   m_Size: {x: 0.8333333, y: 0.7}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1141264265
@@ -1081,8 +1081,8 @@ MonoBehaviour:
   - {fileID: 2083158329}
   - {fileID: 898975865}
   - {fileID: 1952880628}
-  hitPointOn: {fileID: 606694569, guid: 9a7828814abacfb469b8e4f55a8e30bd, type: 3}
-  hitPointOff: {fileID: -239472565, guid: 9a7828814abacfb469b8e4f55a8e30bd, type: 3}
+  hitPointOn: {fileID: 1242118279, guid: 9a7828814abacfb469b8e4f55a8e30bd, type: 3}
+  hitPointOff: {fileID: -1295687750, guid: 9a7828814abacfb469b8e4f55a8e30bd, type: 3}
 --- !u!1001 &1592261465
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1216,7 +1216,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 606694569, guid: 9a7828814abacfb469b8e4f55a8e30bd, type: 3}
+  m_Sprite: {fileID: 1242118279, guid: 9a7828814abacfb469b8e4f55a8e30bd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1224,7 +1224,7 @@ SpriteRenderer:
   m_Size: {x: 0.8333333, y: 0.7}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &2083158327
@@ -1303,7 +1303,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 606694569, guid: 9a7828814abacfb469b8e4f55a8e30bd, type: 3}
+  m_Sprite: {fileID: 1242118279, guid: 9a7828814abacfb469b8e4f55a8e30bd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1311,7 +1311,7 @@ SpriteRenderer:
   m_Size: {x: 0.8333333, y: 0.7}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &736709413360085588
