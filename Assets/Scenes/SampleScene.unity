@@ -127,6 +127,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 873864623}
     m_Modifications:
+    - target: {fileID: 175030632044654957, guid: 3629aa1821bd06d4aadb2d55e05eca9e, type: 3}
+      propertyPath: m_Size.x
+      value: 163.00546
+      objectReference: {fileID: 0}
+    - target: {fileID: 175030632044654957, guid: 3629aa1821bd06d4aadb2d55e05eca9e, type: 3}
+      propertyPath: m_Size.y
+      value: 102.337036
+      objectReference: {fileID: 0}
+    - target: {fileID: 175030632044654957, guid: 3629aa1821bd06d4aadb2d55e05eca9e, type: 3}
+      propertyPath: m_Offset.x
+      value: -3.1865234
+      objectReference: {fileID: 0}
+    - target: {fileID: 175030632044654957, guid: 3629aa1821bd06d4aadb2d55e05eca9e, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.6878891
+      objectReference: {fileID: 0}
     - target: {fileID: 3657449795548875115, guid: 3629aa1821bd06d4aadb2d55e05eca9e, type: 3}
       propertyPath: m_Name
       value: Spawn
@@ -190,6 +206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 873864623}
   - component: {fileID: 873864622}
+  - component: {fileID: 873864624}
   m_Layer: 0
   m_Name: RoomTemplates
   m_TagString: Rooms
@@ -255,12 +272,24 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 15.271362, y: -34.857666, z: -0.055416033}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2067337752}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &873864624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873864621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f1f19112027ee9478cc0d6c09635eae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2067337752 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7415219473976165014, guid: 3629aa1821bd06d4aadb2d55e05eca9e, type: 3}

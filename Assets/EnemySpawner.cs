@@ -32,7 +32,7 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < Count; i++) 
         {
-            Vector3 spawnSpot = transform.position + new Vector3(Random.Range(-3f, 3f), Random.Range(-3f, 3f), 0);
+            Vector3 spawnSpot = transform.position + new Vector3(Random.Range(-2.5f, 2.5f), Random.Range(-2.5f, 2.5f), 0);
             int rand = Random.Range(0, templates.enemy.Length);
             Instantiate(templates.enemy[rand], spawnSpot, templates.enemy[rand].transform.rotation, transform);
         }
