@@ -26,6 +26,7 @@ public class RoomTemplates : MonoBehaviour
     public GameObject[] left;
     public GameObject[] right;
     public GameObject[] inner;
+    public GameObject[] enemy;
 
     public GameObject block;
     public List<GameObject> rooms;
