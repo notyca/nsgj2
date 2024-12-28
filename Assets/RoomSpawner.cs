@@ -34,33 +34,21 @@ public class RoomSpawner : MonoBehaviour
                 case 1:
                     rand = Random.Range(0, templates.bottom.Length);
                     Transform firstObjectTransform1 = Instantiate(templates.bottom[rand], transform.position, templates.bottom[rand].transform.rotation, Vedal.transform).transform;
-                    rand2 = Random.Range(0, templates.inner.Length);
-                    Transform secondObjectTransform1 = Instantiate(templates.inner[rand2], transform.position, templates.inner[rand2].transform.rotation, firstObjectTransform1).transform;
-                    secondObjectTransform1.localScale /= 100f;
                     break;
 
                 case 2:
                     rand = Random.Range(0, templates.top.Length);
                     Transform firstObjectTransform2 = Instantiate(templates.top[rand], transform.position, templates.top[rand].transform.rotation, Vedal.transform).transform;
-                    rand2 = Random.Range(0, templates.inner.Length);
-                    Transform secondObjectTransform2 = Instantiate(templates.inner[rand2], transform.position, templates.inner[rand2].transform.rotation, firstObjectTransform2).transform;
-                    secondObjectTransform2.localScale /= 100f;
                     break;
 
                 case 3:
                     rand = Random.Range(0, templates.left.Length);
                     Transform firstObjectTransform3 = Instantiate(templates.left[rand], transform.position, templates.left[rand].transform.rotation, Vedal.transform).transform;
-                    rand2 = Random.Range(0, templates.inner.Length);
-                    Transform secondObjectTransform3 = Instantiate(templates.inner[rand2], transform.position, templates.inner[rand2].transform.rotation, firstObjectTransform3).transform;
-                    secondObjectTransform3.localScale /= 100f;
                     break;
 
                 case 4:
                     rand = Random.Range(0, templates.right.Length);
                     Transform firstObjectTransform4 = Instantiate(templates.right[rand], transform.position, templates.right[rand].transform.rotation, Vedal.transform).transform;
-                    rand2 = Random.Range(0, templates.inner.Length);
-                    Transform secondObjectTransform4 = Instantiate(templates.inner[rand2], transform.position, templates.inner[rand2].transform.rotation, firstObjectTransform4).transform;
-                    secondObjectTransform4.localScale /= 100f;
                     break;
             }
             spawned = true;
