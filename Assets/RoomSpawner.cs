@@ -14,8 +14,11 @@ public class RoomSpawner : MonoBehaviour
     private int rand;
     public bool spawned = false;
     public float waitTime = 4f;
+    private Transform Vedal;
+    
 
     void Start() {
+        Vedal = GameObject.Find("RoomTemplates").transform;
         Destroy(gameObject, waitTime);
         GameObject[] roomObjects = GameObject.FindGameObjectsWithTag("Rooms");
         templates = roomObjects[0].GetComponent<RoomTemplates>();
@@ -30,25 +33,25 @@ public class RoomSpawner : MonoBehaviour
                 case 1:
                     //Spawn bottom room
                     rand = Random.Range(0,templates.bottom.Length);
-                    Instantiate(templates.bottom[rand], transform.position, templates.bottom[rand].transform.rotation);
+                    Instantiate(templates.bottom[rand], transform.position, templates.bottom[rand].transform.rotation, Vedal);
                     break;
 
                 case 2:
                     //Spawn top room
                     rand = Random.Range(0,templates.top.Length);
-                    Instantiate(templates.top[rand], transform.position, templates.top[rand].transform.rotation);
+                    Instantiate(templates.top[rand], transform.position, templates.top[rand].transform.rotation, Vedal);
                     break;
 
                 case 3:
                     //Spawn left room
                     rand = Random.Range(0,templates.left.Length);
-                    Instantiate(templates.left[rand], transform.position, templates.left[rand].transform.rotation);
+                    Instantiate(templates.left[rand], transform.position, templates.left[rand].transform.rotation, Vedal);
                     break;
 
                 case 4:
                     //Spawn right room
                     rand = Random.Range(0,templates.right.Length);
-                    Instantiate(templates.right[rand], transform.position, templates.right[rand].transform.rotation);
+                    Instantiate(templates.right[rand], transform.position, templates.right[rand].transform.rotation, Vedal);
                     break;
             }
             spawned = true;
@@ -59,7 +62,7 @@ public class RoomSpawner : MonoBehaviour
         if (other.CompareTag("Spawnpoint")) {
             if (other.GetComponent<RoomSpawner>().spawned == false && spawned == false) {
                 //spawn wall to block hole
-                Instantiate(templates.block, transform.position, templates.block.transform.rotation);
+                Instantiate(templates.block, transform.position, templates.block.transform.rotation, Vedal);
                 Destroy(gameObject);
             }
             spawned = true;
