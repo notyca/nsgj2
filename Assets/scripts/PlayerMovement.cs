@@ -2,6 +2,7 @@ using System.Runtime.CompilerServices;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
+
 public class PlayerMovement : MonoBehaviour
 {
     private Animator animator;
@@ -11,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     private float speed = 5.0f;
 
     private Vector2 direction = Vector2.up;
+
+    private bool movementEnabled = true;
 
     void Start()
     {
@@ -22,6 +25,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!movementEnabled)
+        {
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
+
         // input
         if (Input.GetKey(KeyCode.W))
         {
@@ -49,6 +58,11 @@ public class PlayerMovement : MonoBehaviour
             inputVector.x = 0;
         }
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+
+        }
+
         if (inputVector != Vector2.zero)
         {
             inputVector = inputVector.normalized;
@@ -61,6 +75,16 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetFloat("horizontal", direction.x);
         animator.SetFloat("vertical", direction.y);
+    }
+
+    public void DisableMovement()
+    {
+        movementEnabled = false;
+    }
+
+    public void EnableMovement()
+    {
+        movementEnabled = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
