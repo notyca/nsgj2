@@ -239,6 +239,8 @@ MonoBehaviour:
   - {fileID: 1354395105732643904, guid: b351939b1e4793949b9adfe3079c8d05, type: 3}
   inner:
   - {fileID: 5395321109705870326, guid: 3812e77738be50241a3539b333401ce0, type: 3}
+  enemy:
+  - {fileID: 3218344007378055972, guid: 2c360779d0377d042bd61f5292d47580, type: 3}
   block: {fileID: 2210340430208544693, guid: 6e42d0cdfacadea46bfa635a03e7d6bb, type: 3}
   rooms: []
   waitTime: 3

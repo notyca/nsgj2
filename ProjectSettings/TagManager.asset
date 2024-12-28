@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Spawnpoint
   - Rooms
+  - NoFullAutoInBuildings
   layers:
   - Default
   - TransparentFX
