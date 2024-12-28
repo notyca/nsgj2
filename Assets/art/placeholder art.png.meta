@@ -273,10 +273,10 @@ TextureImporter:
       name: placeholder art_7
       rect:
         serializedVersion: 2
-        x: 179
-        y: 71
-        width: 49
-        height: 68
+        x: 406
+        y: 209
+        width: 50
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -295,10 +295,10 @@ TextureImporter:
       name: placeholder art_8
       rect:
         serializedVersion: 2
-        x: 290
-        y: 77
-        width: 89
-        height: 55
+        x: 473
+        y: 209
+        width: 50
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -317,10 +317,10 @@ TextureImporter:
       name: placeholder art_9
       rect:
         serializedVersion: 2
-        x: 419
-        y: 66
-        width: 83
-        height: 54
+        x: 179
+        y: 71
+        width: 49
+        height: 68
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -339,6 +339,50 @@ TextureImporter:
       name: placeholder art_10
       rect:
         serializedVersion: 2
+        x: 290
+        y: 77
+        width: 89
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1f639c802c6cb847a48150a8632981c
+      internalID: -47019860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder art_11
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 66
+        width: 83
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 885beba0c3c782a41872c5247b4b2868
+      internalID: -605822026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder art_12
+      rect:
+        serializedVersion: 2
         x: 574
         y: 66
         width: 49
@@ -351,8 +395,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1f639c802c6cb847a48150a8632981c
-      internalID: -47019860
+      spriteID: cafa9b6bbcf2c954694f57aae0e1c451
+      internalID: -1160395529
       vertices: []
       indices: 
       edges: []
@@ -374,6 +418,8 @@ TextureImporter:
       placeholder art_0: 4199569623406810356
       placeholder art_1: 8649865121833839671
       placeholder art_10: -47019860
+      placeholder art_11: -605822026
+      placeholder art_12: -1160395529
       placeholder art_2: -367681905
       placeholder art_3: -1194665094
       placeholder art_4: 1667448708
