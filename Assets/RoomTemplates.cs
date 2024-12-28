@@ -7,6 +7,7 @@ public class RoomTemplates : MonoBehaviour
     public GameObject[] top;
     public GameObject[] left;
     public GameObject[] right;
+    public GameObject[] inner;
 
     public GameObject block;
     public List<GameObject> rooms;

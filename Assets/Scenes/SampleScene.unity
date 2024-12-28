@@ -242,6 +242,8 @@ MonoBehaviour:
   - {fileID: 1943650357159677778, guid: 7ddd5060f705a824f9daa9baa1aaed33, type: 3}
   - {fileID: 5194334439060997416, guid: e2b772f4159ad30419ccc6c4061d9daa, type: 3}
   - {fileID: 1354395105732643904, guid: b351939b1e4793949b9adfe3079c8d05, type: 3}
+  inner:
+  - {fileID: 4098883840957999848, guid: e3ff78bdfad34274aa2d7bef3400dd9b, type: 3}
   block: {fileID: 2210340430208544693, guid: 6e42d0cdfacadea46bfa635a03e7d6bb, type: 3}
   rooms: []
   waitTime: 3
