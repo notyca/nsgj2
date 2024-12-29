@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private LayerMask excludeEnemy;
     [SerializeField] private LayerMask excludeNothing;
+    [SerializeField] private SpriteMask cooldownBarMask;
 
     [SerializeField] private GameObject crosshair;
     private float crosshairSpeed = 15.0f;
@@ -20,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private float speed = 5.0f;
     private float dashSpeed = 40.0f;
     public bool dashing = false;
+    private bool coolingDown = false;
 
     private bool bulletTime = false;
     private float bulletTimeSlowDown = 0.1f;
@@ -69,14 +71,14 @@ public class PlayerMovement : MonoBehaviour
             inputVector.x = 0;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (!coolingDown && Input.GetKeyDown(KeyCode.Space))
         {
             bulletTime = true;
 
             crosshair.transform.localPosition = new Vector2(0, 0);
             crosshair.GetComponent<SpriteRenderer>().enabled = true;
         }
-        else if (Input.GetKeyUp(KeyCode.Space))
+        else if (bulletTime && Input.GetKeyUp(KeyCode.Space))
         {
             bulletTime = false;
 
@@ -150,6 +152,20 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(0.08f);
         EnableMovement();
         GetComponent<Rigidbody2D>().excludeLayers = excludeEnemy;
+        StartCoroutine(Cooldown());
         dashing = false;
+    }
+
+    private IEnumerator Cooldown()
+    {
+        coolingDown = true;
+        float timePassed = 0;
+        while(timePassed < 3)
+        {
+            cooldownBarMask.alphaCutoff = (timePassed / 3);
+            yield return new WaitForEndOfFrame();
+            timePassed += Time.deltaTime;
+        }
+        coolingDown = false;
     }
 }

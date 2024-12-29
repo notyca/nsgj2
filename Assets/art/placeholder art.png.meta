@@ -454,7 +454,7 @@ TextureImporter:
         width: 71
         height: 63
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -463,6 +463,72 @@ TextureImporter:
       bones: []
       spriteID: 7106acc7f21886348b3984bb142dd05e
       internalID: -47019860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder art_7
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 211
+        width: 158
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4b3dbaca78fa234aa89905c926eb4a8
+      internalID: 606694569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder art_8
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 173
+        width: 135
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c725f63c873a5f34baf692a268f36a6a
+      internalID: -239472565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder art_9
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 124
+        width: 147
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ec2e48ac93d2394d8f126c04055e808
+      internalID: -802718821
       vertices: []
       indices: 
       edges: []
