@@ -99,6 +99,7 @@ public class PlayerMovement : MonoBehaviour
             rb.linearVelocity = Vector2.zero;
 
             crosshair.transform.localPosition += (Vector3)(inputVector * crosshairSpeed * Time.deltaTime);
+            direction = crosshair.transform.localPosition.normalized;
         }
         else
         {
