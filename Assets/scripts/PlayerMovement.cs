@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Runtime.CompilerServices;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -5,11 +6,23 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private LayerMask excludeEnemy;
+    [SerializeField] private LayerMask excludeNothing;
+
+    [SerializeField] private GameObject crosshair;
+    private float crosshairSpeed = 15.0f;
+
     private Animator animator;
 
     private Rigidbody2D rb;
+
     private Vector2 inputVector;
     private float speed = 5.0f;
+    private float dashSpeed = 40.0f;
+    public bool dashing = false;
+
+    private bool bulletTime = false;
+    private float bulletTimeSlowDown = 0.1f;
 
     private Vector2 direction = Vector2.up;
 
@@ -19,7 +32,6 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        print("twoh");
     }
 
     // Update is called once per frame
@@ -27,7 +39,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!movementEnabled)
         {
-            rb.linearVelocity = Vector2.zero;
             return;
         }
 
@@ -60,7 +71,19 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            bulletTime = true;
 
+            crosshair.transform.localPosition = new Vector2(0, 0);
+            crosshair.GetComponent<SpriteRenderer>().enabled = true;
+        }
+        else if (Input.GetKeyUp(KeyCode.Space))
+        {
+            bulletTime = false;
+
+            crosshair.GetComponent<SpriteRenderer>().enabled = false;
+
+            Dash(crosshair.transform.localPosition.normalized);
+            return;
         }
 
         if (inputVector != Vector2.zero)
@@ -71,7 +94,16 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // move player
-        rb.linearVelocity = inputVector * speed;
+        if (bulletTime)
+        {
+            rb.linearVelocity = Vector2.zero;
+
+            crosshair.transform.localPosition += (Vector3)(inputVector * crosshairSpeed * Time.deltaTime);
+        }
+        else
+        {
+            rb.linearVelocity = inputVector * speed;
+        }
 
         animator.SetFloat("horizontal", direction.x);
         animator.SetFloat("vertical", direction.y);
@@ -79,6 +111,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void DisableMovement()
     {
+        rb.linearVelocity = Vector2.zero;
         movementEnabled = false;
     }
 
@@ -87,8 +120,35 @@ public class PlayerMovement : MonoBehaviour
         movementEnabled = true;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public bool IsInBulletTime()
     {
-        print("hey//");
+        return bulletTime;
+    }
+
+    public float GetBulletTimeSlowDown()
+    {
+        return bulletTimeSlowDown;
+    }
+
+    private void Dash(Vector2 dashDirection)
+    {
+        if (dashDirection == Vector2.zero)
+        {
+            return;
+        }
+        DisableMovement();
+        StartCoroutine(Dashing(dashDirection));
+    }
+
+    private IEnumerator Dashing(Vector2 dashDirection)
+    {
+        dashing = true;
+        GetComponent<Rigidbody2D>().excludeLayers = excludeNothing;
+        GetComponent<Rigidbody2D>().linearVelocity = dashDirection * dashSpeed;
+
+        yield return new WaitForSeconds(0.08f);
+        EnableMovement();
+        GetComponent<Rigidbody2D>().excludeLayers = excludeEnemy;
+        dashing = false;
     }
 }

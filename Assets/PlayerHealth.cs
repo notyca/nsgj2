@@ -34,12 +34,15 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(GetComponent<PlayerMovement>().dashing)
+        {
+            return;
+        }
         // check if collision was with bullet. can do this in other ways if this is too limited
         if (collision.TryGetComponent(out bullet b))
         {
             HurtPlayer();
             hitPointsUI.ShowHitPoints(hp);
-            GetComponent<PlayerMovement>().DisableMovement();
         }
     }
 }
