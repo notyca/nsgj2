@@ -100,7 +100,7 @@ public class EnemySpawner : MonoBehaviour
                     BoxCollider2D boxCollider = child.GetComponent<BoxCollider2D>();
                     if (boxCollider != null)
                     {
-                        boxCollider.enabled = true;
+                        boxCollider.enabled = false;
                         stuffSpawned = true;
                     }
                 }
