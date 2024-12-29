@@ -2,23 +2,6 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public struct Room
-{
-    public enum RoomTypes
-    {
-        ENEMY,
-        SHOP,
-        BOSS
-    }
-
-    public bool up;
-    public bool down;
-    public bool left;
-    public bool right;
-
-    public RoomTypes roomType;
-}
-
 public class RoomTemplates : MonoBehaviour
 {
     public GameObject[] bottom;
@@ -35,11 +18,18 @@ public class RoomTemplates : MonoBehaviour
     public GameObject highlight;
     public List<GameObject> rooms;
 
-    public Dictionary<Vector2, Room> roomPositions;
+    public Dictionary<Vector2, AddRoom> roomPositions = new Dictionary<Vector2, AddRoom>();
+    public GameObject[] roomTypes;
+    public AddRoom spawn;
 
     public float waitTime;
     private bool spawnedBoss;
     public GameObject boss;
+
+    private void Start()
+    {
+        roomPositions[Vector2.zero] = spawn;
+    }
 
     void Update() {
         if (waitTime <= 0 && spawnedBoss == false) {

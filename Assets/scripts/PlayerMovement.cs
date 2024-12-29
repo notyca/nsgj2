@@ -16,7 +16,6 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        print("twoh");
     }
 
     // Update is called once per frame
@@ -61,10 +60,5 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetFloat("horizontal", direction.x);
         animator.SetFloat("vertical", direction.y);
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        print("hey//");
     }
 }
