@@ -18,14 +18,14 @@ public class EnemySpawner : MonoBehaviour
             templates = roomObjects[0].GetComponent<RoomTemplates>();
 
             EnemyCount = Random.Range(0, 4);
-            if (EnemyCount < 1)
+            if (EnemyCount == 0)
             {
-                CoinFlip = Random.Range(0, 2);
+                CoinFlip = Random.Range(0, 3);
             }
 
-            if (CoinFlip == 1)
+            if (CoinFlip != 0)
             {
-                spawnShop();
+                spawnChest();
             }
             else
             {
@@ -110,8 +110,9 @@ public class EnemySpawner : MonoBehaviour
     }
 
 
-    void spawnShop()
+    void spawnChest()
     {
-        // Shop spawning logic here
+        GameObject Chest = Instantiate(templates.chest, transform.position + Vector3.down, templates.chest.transform.rotation);
+        Enemys.Add(Chest);
     }
 }
