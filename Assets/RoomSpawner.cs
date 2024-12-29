@@ -36,10 +36,9 @@ public class RoomSpawner : MonoBehaviour
     
 
     void Awake() {
-        Vedal = GameObject.Find("RoomTemplates").transform;
+        Vedal = GetComponentInParent<RoomTemplates>().transform;
         Destroy(gameObject, waitTime);
-        GameObject[] roomObjects = GameObject.FindGameObjectsWithTag("Rooms");
-        templates = roomObjects[0].GetComponent<RoomTemplates>();
+        templates = Vedal.GetComponent<RoomTemplates>();
     }
 
     private void Start()
@@ -49,7 +48,7 @@ public class RoomSpawner : MonoBehaviour
 
     void Spawn() {
 
-        if (!templates.roomPositions.Keys.Contains(GetComponentInParent<AddRoom>().roomPosition + openingDirectionVectors[openingDirection - 1])) {
+        if (!spawned && !templates.roomPositions.Keys.Contains(GetComponentInParent<AddRoom>().roomPosition + openingDirectionVectors[openingDirection - 1])) {
             switch (openingDirection)
             {
                 case 1:
@@ -102,22 +101,6 @@ public class RoomSpawner : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Spawnpoint")) {
-            if(GetComponentInParent<AddRoom>() == null)
-            {
-                print("add room is null");
-            }
-            if(templates == null)
-            {
-                print("templates is null");
-            }
-            if(templates.roomPositions == null)
-            {
-                print("room positions is null");
-            }
-            if (templates.roomPositions.Keys == null)
-            {
-                print("room positions keys is null");
-            }
             if (templates.roomPositions.Keys.Contains(GetComponentInParent<AddRoom>().roomPosition + openingDirectionVectors[openingDirection - 1]))
             {
                 AddRoom adjacentRoom = templates.roomPositions[GetComponentInParent<AddRoom>().roomPosition + openingDirectionVectors[openingDirection - 1]];
@@ -141,16 +124,17 @@ public class RoomSpawner : MonoBehaviour
             else
             {
                 //spawn wall to block hole
-                /*
+                
                 Instantiate(templates.block, transform.position, templates.block.transform.rotation, Vedal);
                 Destroy(gameObject);
-                */
+                /*
                 int newRoomIndex = openingDirectionBits[openingDirection - 1];
                 Transform firstObjectTransform1 = Instantiate(templates.roomTypes[newRoomIndex], transform.position, templates.roomTypes[newRoomIndex].transform.rotation, Vedal.transform).transform;
                 Transform secondObjectTransform1 = Instantiate(templates.inner[0], transform.position, templates.inner[0].transform.rotation, firstObjectTransform1).transform;
 
                 firstObjectTransform1.GetComponent<AddRoom>().roomPosition = GetComponentInParent<AddRoom>().roomPosition + openingDirectionVectors[openingDirection - 1];
                 templates.roomPositions[firstObjectTransform1.GetComponent<AddRoom>().roomPosition] = firstObjectTransform1.GetComponent<AddRoom>();
+                */
             }
             spawned = true;
         }
