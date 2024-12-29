@@ -9,6 +9,7 @@ TagManager:
   - Room
   - NoFullAutoInBuildings
   - EnemyBox
+  - Entrance
   layers:
   - Default
   - TransparentFX
