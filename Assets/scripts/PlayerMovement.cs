@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask excludeEnemy;
     [SerializeField] private LayerMask excludeNothing;
     [SerializeField] private SpriteMask cooldownBarMask;
+    [SerializeField] private SpriteRenderer[] dashTrail;
 
     [SerializeField] private GameObject crosshair;
     private float crosshairSpeed = 15.0f;
@@ -144,6 +145,10 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator Dashing(Vector2 dashDirection)
     {
         dashing = true;
+        foreach (SpriteRenderer trail in dashTrail)
+        {
+            trail.enabled = true;
+        }
         GetComponent<Rigidbody2D>().excludeLayers = excludeNothing;
         GetComponent<Rigidbody2D>().linearVelocity = dashDirection * dashSpeed;
 
@@ -151,6 +156,10 @@ public class PlayerMovement : MonoBehaviour
         EnableMovement();
         GetComponent<Rigidbody2D>().excludeLayers = excludeEnemy;
         StartCoroutine(Cooldown());
+        foreach (SpriteRenderer trail in dashTrail)
+        {
+            StartCoroutine(trail.GetComponent<DashTrailFollow>().DelayDisappear());
+        }
         dashing = false;
     }
 
