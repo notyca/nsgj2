@@ -12,10 +12,9 @@ GameObject:
   - component: {fileID: 8926019108028547936}
   - component: {fileID: 8131326000513442475}
   - component: {fileID: 2964437586896380281}
-  - component: {fileID: 3309992480375582651}
   m_Layer: 0
   m_Name: Enemys
-  m_TagString: Rooms
+  m_TagString: EnemyBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,6 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f1f19112027ee9478cc0d6c09635eae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Enemys: []
+  minDistance: 0.5
 --- !u!61 &2964437586896380281
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -148,15 +149,3 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 14.85, y: 9.35}
   m_EdgeRadius: 0
---- !u!114 &3309992480375582651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5395321109705870326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f1f19112027ee9478cc0d6c09635eae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
