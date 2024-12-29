@@ -27,8 +27,12 @@ public class RoomTemplates : MonoBehaviour
     public GameObject[] right;
     public GameObject[] inner;
     public GameObject[] enemy;
+    public GameObject[] ChestLoot;
 
     public GameObject block;
+    public GameObject chest;
+    public GameObject skip;
+    public GameObject highlight;
     public List<GameObject> rooms;
 
     public Dictionary<Vector2, Room> roomPositions;
