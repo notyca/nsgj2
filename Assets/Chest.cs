@@ -29,7 +29,7 @@ public class Chest : MonoBehaviour
                 if (activeChoiceNum == 3) {
                     GivePowerUp(0);
                 } else {
-                    SelectedId = GetComponent<PwrId>().PowerupId;
+                    SelectedId = activeChoice.GetComponent<PwrId>().PowerupId;
                     GivePowerUp(SelectedId); 
                 }
                 
@@ -91,7 +91,7 @@ public class Chest : MonoBehaviour
                     //skip
                     break;
                 case 1:
-                    print("Test");
+                    print("PowerUp 1");
                     break;
                 case 2:
                     
