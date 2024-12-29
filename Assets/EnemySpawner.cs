@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -7,6 +8,7 @@ public class EnemySpawner : MonoBehaviour
     private int EnemyCount;
     private int CoinFlip;
     private int rand;
+    public List<GameObject> Enemys;
     
     void OnTriggerEnter2D(Collider2D other)
     {
