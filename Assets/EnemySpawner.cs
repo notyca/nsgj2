@@ -8,24 +8,27 @@ public class EnemySpawner : MonoBehaviour
     private int CoinFlip;
     private int rand;
     
-    void Start()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        GameObject[] roomObjects = GameObject.FindGameObjectsWithTag("Rooms");
-        templates = roomObjects[0].GetComponent<RoomTemplates>();
+        if (other.CompareTag("Player")) {
+            GameObject[] roomObjects = GameObject.FindGameObjectsWithTag("Rooms");
+            templates = roomObjects[0].GetComponent<RoomTemplates>();
 
-        EnemyCount = Random.Range(0, 4);
-        if (EnemyCount < 1) {
-            CoinFlip = Random.Range(0, 2);
+            EnemyCount = Random.Range(0, 3);
+            if (EnemyCount < 1) {
+                CoinFlip = Random.Range(0, 2);
+            }
+
+            if (CoinFlip == 1) {
+                spawnShop();
+            } else {
+                EnemyCount = Random.Range(1, 3);
+            }
+
+            spawnEnemies(EnemyCount);
+            GetComponent<BoxCollider2D>().enabled = false;
+
         }
-
-        if (CoinFlip == 1) {
-            spawnShop();
-        } else {
-            EnemyCount = Random.Range(1, 4);
-        }
-
-        spawnEnemies(EnemyCount);
-        
     }
 
     void spawnEnemies(int Count)
