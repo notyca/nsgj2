@@ -155,7 +155,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 734219312}
-  - {fileID: 1328862483}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &173105323
@@ -176,6 +175,7 @@ MonoBehaviour:
   excludeNothing:
     serializedVersion: 2
     m_Bits: 0
+  cooldownBarMask: {fileID: 1459933503}
   crosshair: {fileID: 734219311}
   dashing: 0
 --- !u!212 &173105324
@@ -1137,7 +1137,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1328862483}
   - component: {fileID: 1328862485}
-  - component: {fileID: 1328862484}
   m_Layer: 8
   m_Name: cooldown
   m_TagString: Untagged
@@ -1153,26 +1152,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1328862482}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.87, y: 4.05, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7.0099998, y: 3.4211202, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1459933502}
-  m_Father: {fileID: 173105322}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1328862484
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1328862482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e8738285e64ff542a8f2693180472c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &1328862485
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1779,6 +1766,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 619394802}
+  - {fileID: 1328862483}
   - {fileID: 173105322}
   - {fileID: 736709413360085588}
   - {fileID: 598874971}
