@@ -19,7 +19,7 @@ public class RoomSpawner : MonoBehaviour
     
 
     void Start() {
-        Vedal = GameObject.Find("RoomTemplates").transform;
+        Vedal = GameObject.Find("RoomTemplates(Clone)").transform;
         Destroy(gameObject, waitTime);
         GameObject[] roomObjects = GameObject.FindGameObjectsWithTag("Rooms");
         templates = roomObjects[0].GetComponent<RoomTemplates>();
