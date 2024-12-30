@@ -40,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        animator.SetBool("moving", false);
         if (!movementEnabled)
         {
             return;
@@ -94,6 +95,11 @@ public class PlayerMovement : MonoBehaviour
             inputVector = inputVector.normalized;
 
             direction = inputVector;
+
+            if(!bulletTime)
+            {
+                animator.SetBool("moving", true);
+            }
         }
 
         // move player

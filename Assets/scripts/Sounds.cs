@@ -10,17 +10,28 @@ public class Sounds : MonoBehaviour
     public AudioClip chestSound;
     public AudioClip chest2Sound;
     public AudioClip shrinkSound;
+    public AudioClip startSound;
+    public AudioClip dieSound;
     public AudioClip[] bulletSounds;
     private int rand;
     public AudioClip Music;
     public AudioClip bossMusic;
+
+    public bool start = false;
 
     void Start()
     {
         musicSource = gameObject.AddComponent<AudioSource>();
         sfxSource = gameObject.AddComponent<AudioSource>();
 
-        PlayMusic();
+        if(start)
+        {
+            PlayStartSound();
+        }
+        else
+        {
+            PlayMusic();
+        }
     }
 
     public void playBulletSound()
@@ -57,6 +68,15 @@ public class Sounds : MonoBehaviour
     {
         sfxSource.pitch = Random.Range(0.7f, 1.3f);
         sfxSource.PlayOneShot(shrinkSound, .55f);
+    }
+    public void PlayStartSound()
+    {
+        sfxSource.PlayOneShot(startSound, .55f);
+    }
+    public void PlayDieSound()
+    {
+        sfxSource.pitch = 1;
+        sfxSource.PlayOneShot(dieSound, .55f);
     }
 
 

@@ -273,6 +273,7 @@ GameObject:
   - component: {fileID: 6805934812077451978}
   - component: {fileID: 202865604412438114}
   - component: {fileID: 205328822102741714}
+  - component: {fileID: 4965022106109172371}
   m_Layer: 7
   m_Name: boss1
   m_TagString: Untagged
@@ -412,6 +413,28 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.1441827, y: 2.2719522}
   m_EdgeRadius: 0
+--- !u!95 &4965022106109172371
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2635588182668367046}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6139d95e513e333448888dcafbdf357d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2678566626100177660
 GameObject:
   m_ObjectHideFlags: 0
