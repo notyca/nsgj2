@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/BL.prefab.meta
 guid: a280038a366fdf14485c5173fce9ac9d
+========
+guid: 961c2b768c0017b4daa5f61fc891433d
+>>>>>>>> Chrgreen21-main:Assets/Prefabs/Enemy.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

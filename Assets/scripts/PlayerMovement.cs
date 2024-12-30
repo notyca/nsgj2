@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 direction = Vector2.up;
 
     private bool movementEnabled = true;
+    private int lowerCount = 0;
 
     void Start()
     {
@@ -150,12 +151,12 @@ public class PlayerMovement : MonoBehaviour
         {
             trail.enabled = true;
         }
-        enemyCollider.excludeLayers = excludeNothing;
+        GetComponent<Rigidbody2D>().excludeLayers = excludeNothing;
         GetComponent<Rigidbody2D>().linearVelocity = dashDirection * dashSpeed;
 
         yield return new WaitForSeconds(0.08f);
         EnableMovement();
-        enemyCollider.excludeLayers = excludeEnemy;
+        GetComponent<Rigidbody2D>().excludeLayers = excludeEnemy;
         StartCoroutine(Cooldown());
         foreach (SpriteRenderer trail in dashTrail)
         {
@@ -168,12 +169,16 @@ public class PlayerMovement : MonoBehaviour
     {
         coolingDown = true;
         float timePassed = 0;
-        while(timePassed < 3)
+        while(timePassed < 3 - lowerCount*.5f)
         {
             cooldownBarMask.alphaCutoff = (timePassed / 3);
             yield return new WaitForEndOfFrame();
             timePassed += Time.deltaTime;
         }
         coolingDown = false;
+    }
+
+    public void lowerCooldown() {
+        lowerCount++;
     }
 }

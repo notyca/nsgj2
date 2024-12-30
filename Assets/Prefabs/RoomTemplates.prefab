@@ -79,6 +79,8 @@ MonoBehaviour:
   - {fileID: 5360008045150478190, guid: c992a4b21bbaf6345bf6e52c608d95db, type: 3}
   ChestLoot:
   - {fileID: 4918478530030409406, guid: 022909a48bc87934e8a8ebd99908a636, type: 3}
+  - {fileID: 4918478530030409406, guid: aa6887b148cc9f54aa6705ac88fe83f1, type: 3}
+  - {fileID: 4918478530030409406, guid: 6bd6810aac5250840b79d539f2d7085d, type: 3}
   block: {fileID: 2210340430208544693, guid: 6e42d0cdfacadea46bfa635a03e7d6bb, type: 3}
   chest: {fileID: 2081606067150865027, guid: 9e8cbdac5e00189439b4a27b185a128a, type: 3}
   skip: {fileID: 7234343344816335797, guid: 04866c19ef426d84a994df3e26df1dfd, type: 3}

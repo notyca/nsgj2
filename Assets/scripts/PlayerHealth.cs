@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -25,6 +26,12 @@ public class PlayerHealth : MonoBehaviour
 
     void HurtPlayer()
     {
+        if (GameObject.FindGameObjectWithTag("Player").GetComponent<Necklace>().hasNecklace) {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Necklace>().SpawnNecklace();
+            return;
+        }
+
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Sounds>().playHurtSound();
         hp -= 1;
         if(hp <= 0 )
         {
@@ -41,22 +48,12 @@ public class PlayerHealth : MonoBehaviour
         
         if (collision.gameObject.layer == LayerMask.NameToLayer("bullet"))
         {
-            //HurtPlayer();
+            HurtPlayer();
             hitPointsUI.ShowHitPoints(hp);
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (GetComponent<PlayerMovement>().dashing)
-        {
-            return;
-        }
-
-        if (collision.gameObject.layer == LayerMask.NameToLayer("bullet"))
-        {
-            HurtPlayer();
-            hitPointsUI.ShowHitPoints(hp);
-        }
+    public void Heal() {
+        hp = 3;
     }
 }
