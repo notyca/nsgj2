@@ -328,16 +328,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  hitPointOn: {fileID: 0}
-  hitPointOff: {fileID: 0}
+  - {fileID: 506129109}
+  - {fileID: 1452433787}
+  - {fileID: 43795558}
+  - {fileID: 2001605610}
+  - {fileID: 230205723}
+  - {fileID: 1331914531}
+  - {fileID: 1209509405}
+  - {fileID: 1735634915}
+  hitPointOn: {fileID: -551034993, guid: eed697277b3c4154680e34d4cd36943a, type: 3}
+  hitPointOff: {fileID: -1043858055, guid: eed697277b3c4154680e34d4cd36943a, type: 3}
 --- !u!4 &241798668
 Transform:
   m_ObjectHideFlags: 0
@@ -2218,6 +2218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puffCloud: {fileID: 4515856429079147380, guid: 57d3f16b4d596634e93ed5a10ff9be62, type: 3}
   bullet: {fileID: 2391120609730188068, guid: 18d50ae2be69bd9428ab08c162082493, type: 3}
+  hitPoints: {fileID: 241798667}
 --- !u!61 &1977020289
 BoxCollider2D:
   m_ObjectHideFlags: 0

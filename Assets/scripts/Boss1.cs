@@ -38,7 +38,7 @@ public class Boss1 : MonoBehaviour
             yield return null;
         }
         Destroy(newPuffCloud);
-        StartCoroutine(ShootBullets());
+        StartCoroutine(Helix());
     }
 
     IEnumerator ShootBullets()
@@ -93,6 +93,49 @@ public class Boss1 : MonoBehaviour
             new_bullet.transform.position = transform.position;
             new_bullet.GetComponent<Rigidbody2D>().linearVelocity = direction;
             new_bullet.GetComponent<bullet>().speed = bullet_speed * 2;
+            while (current_interval < interval)
+            {
+                if (player && player.IsInBulletTime())
+                {
+                    current_interval += Time.deltaTime * player.GetBulletTimeSlowDown();
+                }
+                else
+                {
+                    current_interval += Time.deltaTime;
+                }
+                yield return null;
+            }
+            current_interval = 0;
+        }
+        yield return new WaitForSeconds(3f);
+        StartCoroutine(ShootBullets());
+    }
+
+    IEnumerator Helix()
+    {
+        Vector2 direction = Quaternion.AngleAxis(Random.Range(0, 360), Vector3.forward) * Vector2.up;
+
+        float interval = 0.1f;
+
+        float current_interval = 0;
+
+        float deviation = 0;
+
+        for (int round = 0; round < 200; ++round)
+        {
+            for (int i = 0; i < 2; ++i)
+            {
+                direction = (FindAnyObjectByType<PlayerMovement>().transform.position - transform.position).normalized;
+                if(i == 0)
+                    direction = Quaternion.AngleAxis(deviation * 10, Vector3.forward) * direction;
+                else
+                    direction = Quaternion.AngleAxis(-deviation * 10, Vector3.forward) * direction;
+                deviation = Mathf.Sin(Time.time * 4);
+                GameObject new_bullet = Instantiate(bullet);
+                new_bullet.transform.position = transform.position;
+                new_bullet.GetComponent<Rigidbody2D>().linearVelocity = direction;
+                new_bullet.GetComponent<bullet>().speed = bullet_speed * 1;
+            }
             while (current_interval < interval)
             {
                 if (player && player.IsInBulletTime())

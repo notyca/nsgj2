@@ -41,7 +41,7 @@ public class PlayerHealth : MonoBehaviour
         
         if (collision.gameObject.layer == LayerMask.NameToLayer("bullet"))
         {
-            HurtPlayer();
+            //HurtPlayer();
             hitPointsUI.ShowHitPoints(hp);
         }
     }
