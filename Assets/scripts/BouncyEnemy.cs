@@ -1,9 +1,8 @@
 using System.Collections;
 using UnityEngine;
 
-public class enemy : MonoBehaviour
+public class BouncyEnemy : MonoBehaviour
 {
-    [SerializeField] private GameObject puffCloud;
     [SerializeField] private GameObject bullet;
     private float bullet_speed = 5.0f;
 
@@ -25,18 +24,7 @@ public class enemy : MonoBehaviour
 
     IEnumerator PowerUp()
     {
-        transform.localScale = Vector3.zero;
-        yield return new WaitForSeconds(1f);
-        GameObject newPuffCloud = Instantiate(puffCloud);
-        newPuffCloud.transform.position = transform.position;
-        float elapsed = 0;
-        while(elapsed < 2f)
-        {
-            transform.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, Mathf.Min(elapsed / 0.2f, 1));
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
-        Destroy(newPuffCloud);
+        yield return new WaitForSeconds(2);
         StartCoroutine(ShootBullets());
     }
 
@@ -50,13 +38,13 @@ public class enemy : MonoBehaviour
 
         while (true)
         {
-            for (int i = 0; i < 3; ++i)
+            for (int i = 0; i < 2; ++i)
             {
                 GameObject new_bullet = Instantiate(bullet);
                 new_bullet.transform.position = transform.position;
                 new_bullet.GetComponent<Rigidbody2D>().linearVelocity = direction;
-                new_bullet.GetComponent<bullet>().speed = bullet_speed;
-                direction = Quaternion.AngleAxis(120, Vector3.forward) * direction;
+                new_bullet.GetComponent<BouncyBullet>().speed = bullet_speed;
+                direction = Quaternion.AngleAxis(180, Vector3.forward) * direction;
             }
             direction = Quaternion.AngleAxis(20, Vector3.forward) * direction;
             while (current_interval < interval)
@@ -69,7 +57,7 @@ public class enemy : MonoBehaviour
                 {
                     current_interval += Time.deltaTime;
                 }
-                yield return null;
+                yield return new WaitForEndOfFrame();
             }
             current_interval = 0;
         }

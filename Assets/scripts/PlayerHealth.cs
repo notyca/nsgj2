@@ -38,8 +38,22 @@ public class PlayerHealth : MonoBehaviour
         {
             return;
         }
-        // check if collision was with bullet. can do this in other ways if this is too limited
-        if (collision.TryGetComponent(out bullet b))
+        
+        if (collision.gameObject.layer == LayerMask.NameToLayer("bullet"))
+        {
+            HurtPlayer();
+            hitPointsUI.ShowHitPoints(hp);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (GetComponent<PlayerMovement>().dashing)
+        {
+            return;
+        }
+
+        if (collision.gameObject.layer == LayerMask.NameToLayer("bullet"))
         {
             HurtPlayer();
             hitPointsUI.ShowHitPoints(hp);
