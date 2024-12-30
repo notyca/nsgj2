@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask excludeNothing;
     [SerializeField] private SpriteMask cooldownBarMask;
     [SerializeField] private SpriteRenderer[] dashTrail;
+    [SerializeField] private Collider2D enemyCollider;
 
     [SerializeField] private GameObject crosshair;
     private float crosshairSpeed = 15.0f;
@@ -18,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 inputVector;
     private float speed = 5.0f;
-    private float dashSpeed = 40.0f;
+    private float dashSpeed = 60.0f;
     public bool dashing = false;
     private bool coolingDown = false;
 
@@ -149,12 +150,12 @@ public class PlayerMovement : MonoBehaviour
         {
             trail.enabled = true;
         }
-        GetComponent<Rigidbody2D>().excludeLayers = excludeNothing;
+        enemyCollider.excludeLayers = excludeNothing;
         GetComponent<Rigidbody2D>().linearVelocity = dashDirection * dashSpeed;
 
         yield return new WaitForSeconds(0.08f);
         EnableMovement();
-        GetComponent<Rigidbody2D>().excludeLayers = excludeEnemy;
+        enemyCollider.excludeLayers = excludeEnemy;
         StartCoroutine(Cooldown());
         foreach (SpriteRenderer trail in dashTrail)
         {
