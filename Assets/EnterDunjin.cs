@@ -30,6 +30,8 @@ public class EnterDunjin : MonoBehaviour
 
     IEnumerator ShrinkAndTeleport()
     {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().movementEnabled = false;
+
         Transform entrance = FindEntranceInGrandchildrenObjects(transform);
         if (entrance != null)
         {
@@ -61,6 +63,8 @@ public class EnterDunjin : MonoBehaviour
             player.transform.localScale = originalScale;
             //reenable movement
         }
+
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().movementEnabled = true;
     }
 
     Transform FindEntranceInGrandchildrenObjects(Transform parent)

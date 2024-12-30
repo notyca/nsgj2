@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 direction = Vector2.up;
 
-    private bool movementEnabled = true;
+    public bool movementEnabled = true;
 
     void Start()
     {

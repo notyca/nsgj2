@@ -25,6 +25,8 @@ public class Pitfall : MonoBehaviour
 
     private IEnumerator ShrinkPlayer(Transform playerTransform, GameObject spawn)
     {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().movementEnabled = false;
+
         yield return new WaitForSeconds(0.75f);
 
         audioSource.PlayOneShot(pitfallSound);
@@ -53,5 +55,7 @@ public class Pitfall : MonoBehaviour
         yield return null;
 
         playerTransform.localScale = originalScale;
+
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().movementEnabled = true;
     }
 }

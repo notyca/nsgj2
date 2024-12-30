@@ -11,7 +11,6 @@ public class Chest : MonoBehaviour
     public int activeChoiceNum;
     private int SelectedId;
     private GameObject highlight;
-
     public List<GameObject> Powerups = new List<GameObject>();
 
     void Update()
@@ -70,7 +69,7 @@ public class Chest : MonoBehaviour
 
             StartDoinTheThing = true;
 
-            //disable movement here
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().movementEnabled = false;
 
             activeChoice = Loot1;
             activeChoiceNum = 0;
@@ -83,7 +82,7 @@ public class Chest : MonoBehaviour
 
 
     void GivePowerUp(int PowerupId) {
-        //reenable movement here
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().movementEnabled = true;
 
         switch (PowerupId)
             {
