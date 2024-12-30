@@ -46,6 +46,7 @@ public class enemy : MonoBehaviour
                 new_bullet.GetComponent<bullet>().speed = bullet_speed;
                 direction = Quaternion.AngleAxis(120, Vector3.forward) * direction;
             }
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Sounds>().playBulletSound();
             direction = Quaternion.AngleAxis(20, Vector3.forward) * direction;
             while (current_interval < interval)
             {

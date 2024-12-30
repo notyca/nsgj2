@@ -31,6 +31,7 @@ public class PlayerHealth : MonoBehaviour
             return;
         }
 
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Sounds>().playHurtSound();
         hp -= 1;
         if(hp <= 0 )
         {
