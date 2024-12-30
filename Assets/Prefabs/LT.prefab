@@ -381,6 +381,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf53f6627d065ae499bd7a5ebaf47ce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roomPosition: {x: 0, y: 0}
+  roomType: 6
 --- !u!1001 &1146974508614162840
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -395,7 +397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6127175098402992972, guid: a5fc6411c947fea449799db824bf5494, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.9037075
+      value: 5.33
       objectReference: {fileID: 0}
     - target: {fileID: 6127175098402992972, guid: a5fc6411c947fea449799db824bf5494, type: 3}
       propertyPath: m_LocalPosition.z
@@ -453,7 +455,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1278251939885410293, guid: f245422a2c7e3d5419b29fc9dccac07c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.6446757
+      value: -6.2
       objectReference: {fileID: 0}
     - target: {fileID: 1278251939885410293, guid: f245422a2c7e3d5419b29fc9dccac07c, type: 3}
       propertyPath: m_LocalPosition.y

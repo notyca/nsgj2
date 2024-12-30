@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1234062237895085421}
   - component: {fileID: 5462368454085006900}
   m_Layer: 0
-  m_Name: Poerup
+  m_Name: DashCool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 2912297781628502651, guid: 7774c74498393bc45940ea161233c5ec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,4 +100,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad415e16ddf0e7649a62c77966602061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PowerupId: 1
+  PowerupId: 2

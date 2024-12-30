@@ -52,6 +52,8 @@ public class Door : MonoBehaviour
 
     private System.Collections.IEnumerator SmoothMoveCamera(Vector3 targetPosition)
     {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().DisableMovement();
+
         while (Vector3.Distance(mainCamera.transform.position, targetPosition) > 0.01f)
         {
             mainCamera.transform.position = Vector3.MoveTowards(mainCamera.transform.position, targetPosition, cameraMoveSpeed * Time.deltaTime);
@@ -59,5 +61,7 @@ public class Door : MonoBehaviour
         }
 
         mainCamera.transform.position = targetPosition;
+
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().EnableMovement();
     }
 }

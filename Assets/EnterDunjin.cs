@@ -8,24 +8,30 @@ public class EnterDunjin : MonoBehaviour
     public int DunjinNumber;
     private GameObject player;
     private Camera mainCamera;
+    public GameObject returnPoint;
+    public int Number;
 
     void Start()
     {   
         mainCamera = Camera.main;
         player = GameObject.FindGameObjectWithTag("Player");
-        ActiveDunjin = Instantiate(Dunjins[DunjinNumber], transform.position + new Vector3(-2000, 0, 0), Dunjins[DunjinNumber].transform.rotation, transform);
+        ActiveDunjin = Instantiate(Dunjins[DunjinNumber], transform.position + new Vector3(-2000*Number, 0, 0), Dunjins[DunjinNumber].transform.rotation, transform);
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
+            Instantiate(returnPoint, transform.position + new Vector3(0, -2, 0), Dunjins[DunjinNumber].transform.rotation, transform);
             StartCoroutine(ShrinkAndTeleport());
+            GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 
     IEnumerator ShrinkAndTeleport()
     {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().DisableMovement();
+
         Transform entrance = FindEntranceInGrandchildrenObjects(transform);
         if (entrance != null)
         {
@@ -57,6 +63,8 @@ public class EnterDunjin : MonoBehaviour
             player.transform.localScale = originalScale;
             //reenable movement
         }
+
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().EnableMovement();
     }
 
     Transform FindEntranceInGrandchildrenObjects(Transform parent)

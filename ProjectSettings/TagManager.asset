@@ -6,9 +6,12 @@ TagManager:
   tags:
   - Spawnpoint
   - Rooms
+  - Room
   - NoFullAutoInBuildings
   - EnemyBox
   - Entrance
+  - ReturnPoint
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -16,9 +19,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - bullet
+  - enemy
+  - player
   - 
   - 
   - 
