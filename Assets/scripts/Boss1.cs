@@ -51,13 +51,13 @@ public class Boss1 : MonoBehaviour
 
         for(int round = 0; round < 5; ++round)
         {
-            for (int i = 0; i < 12; ++i)
+            for (int i = 0; i < 10; ++i)
             {
                 GameObject new_bullet = Instantiate(bullet);
                 new_bullet.transform.position = transform.position;
                 new_bullet.GetComponent<Rigidbody2D>().linearVelocity = direction;
                 new_bullet.GetComponent<bullet>().speed = bullet_speed;
-                direction = Quaternion.AngleAxis(360 / 12, Vector3.forward) * direction;
+                direction = Quaternion.AngleAxis(360 / 10, Vector3.forward) * direction;
             }
             direction = Quaternion.AngleAxis(20, Vector3.forward) * direction;
             while (current_interval < interval)
@@ -92,7 +92,7 @@ public class Boss1 : MonoBehaviour
             GameObject new_bullet = Instantiate(bullet);
             new_bullet.transform.position = transform.position;
             new_bullet.GetComponent<Rigidbody2D>().linearVelocity = direction;
-            new_bullet.GetComponent<bullet>().speed = bullet_speed * 2;
+            new_bullet.GetComponent<bullet>().speed = bullet_speed * 1.5f;
             while (current_interval < interval)
             {
                 if (player && player.IsInBulletTime())

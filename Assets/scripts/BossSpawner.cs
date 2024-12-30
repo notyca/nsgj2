@@ -13,9 +13,12 @@ public class BossSpawner : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        if (stuffSpawned)
+            return;
         if (other.CompareTag("Player"))
         {
             spawnBoss();
+            FindAnyObjectByType<Sounds>().PlayBossMusic();
 
             GetComponent<BoxCollider2D>().enabled = false;
         }

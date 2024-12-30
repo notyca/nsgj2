@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 direction = Vector2.up;
 
     private bool movementEnabled = true;
-    private int lowerCount = 0;
+    private int lowerCount = 3;
 
     void Start()
     {
@@ -171,7 +171,7 @@ public class PlayerMovement : MonoBehaviour
         float timePassed = 0;
         while(timePassed < 3 - lowerCount*.5f)
         {
-            cooldownBarMask.alphaCutoff = (timePassed / 3 - lowerCount * .5f);
+            cooldownBarMask.alphaCutoff = (timePassed / (3 - lowerCount * .5f));
             yield return new WaitForEndOfFrame();
             timePassed += Time.deltaTime;
         }

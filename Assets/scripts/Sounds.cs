@@ -13,6 +13,7 @@ public class Sounds : MonoBehaviour
     public AudioClip[] bulletSounds;
     private int rand;
     public AudioClip Music;
+    public AudioClip bossMusic;
 
     void Start()
     {
@@ -62,6 +63,12 @@ public class Sounds : MonoBehaviour
     private void PlayMusic()
     {
         musicSource.clip = Music;
+        musicSource.loop = true;
+        musicSource.Play();
+    }
+    public void PlayBossMusic()
+    {
+        musicSource.clip = bossMusic;
         musicSource.loop = true;
         musicSource.Play();
     }
