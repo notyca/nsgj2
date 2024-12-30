@@ -12,6 +12,7 @@ TagManager:
   - Entrance
   - ReturnPoint
   - Enemy
+  - boss spawner
   layers:
   - Default
   - TransparentFX

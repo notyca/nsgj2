@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7214073413037968977}
   - component: {fileID: 4691891569519558820}
   - component: {fileID: 1795093292275473930}
-  - component: {fileID: 6552844781380512399}
+  - component: {fileID: 3914926362224164169}
   m_Layer: 7
-  m_Name: bouncy enemy
+  m_Name: target enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,8 +78,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 80226870508599426, guid: eed697277b3c4154680e34d4cd36943a, type: 3}
-  m_Color: {r: 1, g: 0.4392157, b: 0.78039217, a: 1}
+  m_Sprite: {fileID: 1323089799, guid: eed697277b3c4154680e34d4cd36943a, type: 3}
+  m_Color: {r: 0.25943398, g: 1, b: 0.5428952, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -125,7 +125,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.51666665
---- !u!114 &6552844781380512399
+--- !u!114 &3914926362224164169
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,8 +134,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5360008045150478190}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3571265712625724eb553c2338087007, type: 3}
+  m_Script: {fileID: 11500000, guid: bc8fb741bf16ee74eb2f6814b4b2aeeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   puffCloud: {fileID: 4515856429079147380, guid: 57d3f16b4d596634e93ed5a10ff9be62, type: 3}
-  bullet: {fileID: 2391120609730188068, guid: 1356e358965e0b646993dc8dda2ebc87, type: 3}
+  bullet: {fileID: 2391120609730188068, guid: 18d50ae2be69bd9428ab08c162082493, type: 3}

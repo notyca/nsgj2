@@ -38,7 +38,7 @@ public class Boss1 : MonoBehaviour
             yield return null;
         }
         Destroy(newPuffCloud);
-        StartCoroutine(Helix());
+        StartCoroutine(ShootBullets());
     }
 
     IEnumerator ShootBullets()

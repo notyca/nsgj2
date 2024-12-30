@@ -151,12 +151,12 @@ public class PlayerMovement : MonoBehaviour
         {
             trail.enabled = true;
         }
-        GetComponent<Rigidbody2D>().excludeLayers = excludeNothing;
+        enemyCollider.excludeLayers = excludeNothing;
         GetComponent<Rigidbody2D>().linearVelocity = dashDirection * dashSpeed;
 
         yield return new WaitForSeconds(0.08f);
         EnableMovement();
-        GetComponent<Rigidbody2D>().excludeLayers = excludeEnemy;
+        enemyCollider.excludeLayers = excludeEnemy;
         StartCoroutine(Cooldown());
         foreach (SpriteRenderer trail in dashTrail)
         {
@@ -171,7 +171,7 @@ public class PlayerMovement : MonoBehaviour
         float timePassed = 0;
         while(timePassed < 3 - lowerCount*.5f)
         {
-            cooldownBarMask.alphaCutoff = (timePassed / 3);
+            cooldownBarMask.alphaCutoff = (timePassed / 3 - lowerCount * .5f);
             yield return new WaitForEndOfFrame();
             timePassed += Time.deltaTime;
         }

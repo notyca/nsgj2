@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class BouncyEnemy : MonoBehaviour
+public class TargetEnemy : MonoBehaviour
 {
     [SerializeField] private GameObject puffCloud;
     [SerializeField] private GameObject bullet;
@@ -30,17 +30,17 @@ public class BouncyEnemy : MonoBehaviour
         GameObject newPuffCloud = Instantiate(puffCloud);
         newPuffCloud.transform.position = transform.position;
         float elapsed = 0;
-        while (elapsed < 2f)
+        while(elapsed < 2f)
         {
             transform.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, Mathf.Min(elapsed / 0.2f, 1));
             elapsed += Time.deltaTime;
             yield return null;
         }
         Destroy(newPuffCloud);
-        StartCoroutine(ShootBullets());
+        StartCoroutine(ShootAtPlayer());
     }
 
-    IEnumerator ShootBullets()
+    IEnumerator ShootAtPlayer()
     {
         Vector2 direction = Quaternion.AngleAxis(Random.Range(0, 360), Vector3.forward) * Vector2.up;
 
@@ -48,17 +48,13 @@ public class BouncyEnemy : MonoBehaviour
 
         float current_interval = 0;
 
-        while (true)
+        while(true)
         {
-            for (int i = 0; i < 2; ++i)
-            {
-                GameObject new_bullet = Instantiate(bullet);
-                new_bullet.transform.position = transform.position;
-                new_bullet.GetComponent<Rigidbody2D>().linearVelocity = direction;
-                new_bullet.GetComponent<BouncyBullet>().speed = bullet_speed;
-                direction = Quaternion.AngleAxis(180, Vector3.forward) * direction;
-            }
-            direction = Quaternion.AngleAxis(20, Vector3.forward) * direction;
+            direction = (FindAnyObjectByType<PlayerMovement>().transform.position - transform.position).normalized;
+            GameObject new_bullet = Instantiate(bullet);
+            new_bullet.transform.position = transform.position;
+            new_bullet.GetComponent<Rigidbody2D>().linearVelocity = direction;
+            new_bullet.GetComponent<bullet>().speed = bullet_speed;
             while (current_interval < interval)
             {
                 if (player && player.IsInBulletTime())
@@ -69,7 +65,7 @@ public class BouncyEnemy : MonoBehaviour
                 {
                     current_interval += Time.deltaTime;
                 }
-                yield return new WaitForEndOfFrame();
+                yield return null;
             }
             current_interval = 0;
         }

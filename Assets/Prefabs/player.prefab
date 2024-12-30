@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 8981574465072604134}
   - component: {fileID: 8937967615303774041}
   - component: {fileID: 1147446281588694616}
+  - component: {fileID: 2843901740988066337}
+  - component: {fileID: 8244579329057004528}
   m_Layer: 8
   m_Name: player
   m_TagString: Player
@@ -61,7 +63,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -157,7 +159,7 @@ Animator:
   m_GameObject: {fileID: 4490371334454278592}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2514ed638c11b9949987958d7cfaf218, type: 2}
+  m_Controller: {fileID: 9100000, guid: abea8eb30241a7a40a4094f28283c8a1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -244,7 +246,7 @@ BoxCollider2D:
     m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -274,6 +276,43 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.73373353, y: 0.9784596}
   m_EdgeRadius: 0
+--- !u!114 &2843901740988066337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4490371334454278592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf3b972e9e8f39142acc2e0dda37d3b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasNecklace: 0
+  NecklaceTemplate: {fileID: 7953389361909959069, guid: e33d8973569e40544b8bd27bf42c854a, type: 3}
+  bullets: []
+--- !u!114 &8244579329057004528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4490371334454278592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d7fe7494f363b94390ecfb196afbf2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hurtSound: {fileID: 8300000, guid: 0c8fce9e0c95afe48a596aed72d5d45b, type: 3}
+  doorSound: {fileID: 8300000, guid: b0782ce1feca6d14e935514c2130a152, type: 3}
+  chestSound: {fileID: 8300000, guid: 9ccbbb648b3ff1644a8db485b3c09be4, type: 3}
+  chest2Sound: {fileID: 8300000, guid: 9ccbbb648b3ff1644a8db485b3c09be4, type: 3}
+  shrinkSound: {fileID: 8300000, guid: f1cc08c0909578744ae07fd28418992a, type: 3}
+  bulletSounds:
+  - {fileID: 8300000, guid: a0e33dd8ad787244994a0f50aece7840, type: 3}
+  - {fileID: 8300000, guid: b8db3c61fe08dc248bb52292a4464499, type: 3}
+  - {fileID: 8300000, guid: a547d5c641e3695419078147450d4319, type: 3}
+  Music: {fileID: 0}
 --- !u!1 &6960320369703384978
 GameObject:
   m_ObjectHideFlags: 0

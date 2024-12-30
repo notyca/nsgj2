@@ -106,7 +106,7 @@ MonoBehaviour:
   - {fileID: 3657449795548875115, guid: 2f0095b9510b7084eac22d2fec2b2467, type: 3}
   spawn: {fileID: 6889104908329780485}
   waitTime: 3
-  boss: {fileID: 6374780932827047446, guid: df163dace61b5514d8aefc19ac92465b, type: 3}
+  boss: {fileID: 5395321109705870326, guid: e4fcfbc203986cb469747cf4b85d7b95, type: 3}
 --- !u!1001 &3834514929631810989
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -101,8 +101,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f1f19112027ee9478cc0d6c09635eae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemieses:
+  - {fileID: 1894599485155800393, guid: e29fbd708ed6d5241b2fbb07b678e332, type: 3}
+  - {fileID: 3407028794433099726, guid: 11ba99a5ddd478c40b37714f7c8447f0, type: 3}
+  - {fileID: 1010169195343641, guid: f500c2b8608e0fe4a9add358b14e3f75, type: 3}
+  - {fileID: 4281727344252760828, guid: 85c610ca9a9692c48aeb82b9be923c28, type: 3}
+  - {fileID: 1103448915609890074, guid: 96b13cb67d5ea1346ad174ab771c9ae1, type: 3}
+  - {fileID: 8242238011942898008, guid: f39edb5c4e3d976418958a1ef91910c0, type: 3}
   Enemys: []
-  minDistance: 0.5
 --- !u!61 &2964437586896380281
 BoxCollider2D:
   m_ObjectHideFlags: 0

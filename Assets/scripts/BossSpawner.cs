@@ -2,13 +2,11 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour
+public class BossSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject[] enemieses;
+    [SerializeField] private GameObject[] bosses;
 
     private RoomTemplates templates;
-    private int EnemyCount;
-    private int CoinFlip;
     private int rand;
     public List<GameObject> Enemys = new List<GameObject>();
     private bool stuffSpawned = false;
@@ -17,29 +15,9 @@ public class EnemySpawner : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            GameObject[] roomObjects = GameObject.FindGameObjectsWithTag("Rooms");
-            templates = roomObjects[0].GetComponent<RoomTemplates>();
-
-            EnemyCount = Random.Range(0, 4);
-            if (EnemyCount == 0)
-            {
-                CoinFlip = Random.Range(0, 3);
-            }
-
-            if (CoinFlip != 0)
-            {
-                spawnChest();
-            }
-            else
-            {
-                spawnEnemies();
-            }
+            spawnBoss();
 
             GetComponent<BoxCollider2D>().enabled = false;
-        }
-        else if(other.CompareTag("boss spawner"))
-        {
-            Destroy(gameObject);
         }
     }
 
@@ -82,14 +60,10 @@ public class EnemySpawner : MonoBehaviour
 
 
 
-    void spawnEnemies()
+    void spawnBoss()
     {
-        rand = Random.Range(0, enemieses.Length);
-        GameObject enemies = Instantiate(enemieses[rand], transform.position, enemieses[rand].transform.rotation, transform);
-        foreach (GameObject enemy in enemies.GetComponent<enemies>().enemyz)
-        {
-            Enemys.Add(enemy);
-        }
+        GameObject boss = Instantiate(bosses[0], transform.position, bosses[0].transform.rotation, transform);
+        Enemys.Add(boss);
 
         Transform parentTransform = transform.parent;
 
@@ -112,12 +86,5 @@ public class EnemySpawner : MonoBehaviour
                 break;
             }
         }
-    }
-
-
-    void spawnChest()
-    {
-        GameObject Chest = Instantiate(templates.chest, transform.position + Vector3.down, templates.chest.transform.rotation);
-        Enemys.Add(Chest);
     }
 }
