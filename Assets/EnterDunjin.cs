@@ -30,7 +30,7 @@ public class EnterDunjin : MonoBehaviour
 
     IEnumerator ShrinkAndTeleport()
     {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().movementEnabled = false;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().DisableMovement();
 
         Transform entrance = FindEntranceInGrandchildrenObjects(transform);
         if (entrance != null)
@@ -64,7 +64,7 @@ public class EnterDunjin : MonoBehaviour
             //reenable movement
         }
 
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().movementEnabled = true;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().EnableMovement();
     }
 
     Transform FindEntranceInGrandchildrenObjects(Transform parent)

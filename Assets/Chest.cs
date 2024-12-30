@@ -69,7 +69,7 @@ public class Chest : MonoBehaviour
 
             StartDoinTheThing = true;
 
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().movementEnabled = false;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().DisableMovement();
 
             activeChoice = Loot1;
             activeChoiceNum = 0;
@@ -82,7 +82,7 @@ public class Chest : MonoBehaviour
 
 
     void GivePowerUp(int PowerupId) {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().movementEnabled = true;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().EnableMovement();
 
         switch (PowerupId)
             {
