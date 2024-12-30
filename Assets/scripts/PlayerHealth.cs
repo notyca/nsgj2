@@ -32,7 +32,7 @@ public class PlayerHealth : MonoBehaviour
         }
 
         GameObject.FindGameObjectWithTag("Player").GetComponent<Sounds>().playHurtSound();
-        hp -= 1;
+        //hp -= 1;
         if(hp <= 0 )
         {
             Respawn();

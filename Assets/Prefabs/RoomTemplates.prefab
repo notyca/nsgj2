@@ -76,7 +76,8 @@ MonoBehaviour:
   inner:
   - {fileID: 5395321109705870326, guid: 3812e77738be50241a3539b333401ce0, type: 3}
   enemy:
-  - {fileID: 5360008045150478190, guid: c992a4b21bbaf6345bf6e52c608d95db, type: 3}
+  - {fileID: 5360008045150478190, guid: 0d9e4998816242247966c279e9ea5ee0, type: 3}
+  - {fileID: 5360008045150478190, guid: 0968ac38c3fd4ed4e994e2f06715b5f6, type: 3}
   ChestLoot:
   - {fileID: 4918478530030409406, guid: 022909a48bc87934e8a8ebd99908a636, type: 3}
   - {fileID: 4918478530030409406, guid: aa6887b148cc9f54aa6705ac88fe83f1, type: 3}
