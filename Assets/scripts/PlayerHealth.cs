@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -25,6 +26,11 @@ public class PlayerHealth : MonoBehaviour
 
     void HurtPlayer()
     {
+        if (GameObject.FindGameObjectWithTag("Player").GetComponent<Necklace>().hasNecklace) {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Necklace>().SpawnNecklace();
+            return;
+        }
+
         hp -= 1;
         if(hp <= 0 )
         {
@@ -44,5 +50,9 @@ public class PlayerHealth : MonoBehaviour
             HurtPlayer();
             hitPointsUI.ShowHitPoints(hp);
         }
+    }
+
+    public void Heal() {
+        hp = 3;
     }
 }

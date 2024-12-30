@@ -25,7 +25,7 @@ public class Pitfall : MonoBehaviour
 
     private IEnumerator ShrinkPlayer(Transform playerTransform, GameObject spawn)
     {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().EnableMovement();
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().DisableMovement();
 
         yield return new WaitForSeconds(0.75f);
 
@@ -56,6 +56,6 @@ public class Pitfall : MonoBehaviour
 
         playerTransform.localScale = originalScale;
 
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().DisableMovement();
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().EnableMovement();
     }
 }

@@ -12,6 +12,7 @@ public class Chest : MonoBehaviour
     private int SelectedId;
     private GameObject highlight;
     public List<GameObject> Powerups = new List<GameObject>();
+    private int dashCount = 0;
 
     void Update()
     {
@@ -47,20 +48,23 @@ public class Chest : MonoBehaviour
 
             rand = Random.Range(0, templates.ChestLoot.Length);
 
-            var Loot1 = Instantiate(templates.ChestLoot[rand], transform.position + new Vector3(-2, 1.5f, 0), templates.inner[rand].transform.rotation, transform);
+            var Loot1 = Instantiate(templates.ChestLoot[rand], transform.position + new Vector3(-2, 1.5f, 0), templates.ChestLoot[rand].transform.rotation, transform);
             Loot1.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-            StartCoroutine(ScaleOverTime(Loot1.transform, new Vector3(templates.ChestLoot[rand].transform.localScale.x /2, templates.ChestLoot[rand].transform.localScale.y, templates.ChestLoot[rand].transform.localScale.z), .5f));
+            StartCoroutine(ScaleOverTime(Loot1.transform, new Vector3(templates.ChestLoot[rand].transform.localScale.x / 2, templates.ChestLoot[rand].transform.localScale.y, templates.ChestLoot[rand].transform.localScale.z), 0.5f));
             Powerups.Add(Loot1);
 
-            var Loot2 = Instantiate(templates.ChestLoot[rand], transform.position + new Vector3(0, 2.5f, 0), templates.inner[rand].transform.rotation, transform);
+            rand = Random.Range(0, templates.ChestLoot.Length);
+            var Loot2 = Instantiate(templates.ChestLoot[rand], transform.position + new Vector3(0, 2.5f, 0), templates.ChestLoot[rand].transform.rotation, transform);
             Loot2.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-            StartCoroutine(ScaleOverTime(Loot2.transform, new Vector3(templates.ChestLoot[rand].transform.localScale.x /2, templates.ChestLoot[rand].transform.localScale.y, templates.ChestLoot[rand].transform.localScale.z), .5f));
+            StartCoroutine(ScaleOverTime(Loot2.transform, new Vector3(templates.ChestLoot[rand].transform.localScale.x / 2, templates.ChestLoot[rand].transform.localScale.y, templates.ChestLoot[rand].transform.localScale.z), 0.5f));
             Powerups.Add(Loot2);
 
-            var Loot3 = Instantiate(templates.ChestLoot[rand], transform.position + new Vector3(2, 1.5f, 0), templates.inner[rand].transform.rotation, transform);
+            rand = Random.Range(0, templates.ChestLoot.Length);
+            var Loot3 = Instantiate(templates.ChestLoot[rand], transform.position + new Vector3(2, 1.5f, 0), templates.ChestLoot[rand].transform.rotation, transform);
             Loot3.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-            StartCoroutine(ScaleOverTime(Loot3.transform, new Vector3(templates.ChestLoot[rand].transform.localScale.x /2, templates.ChestLoot[rand].transform.localScale.y, templates.ChestLoot[rand].transform.localScale.z), .5f));
+            StartCoroutine(ScaleOverTime(Loot3.transform, new Vector3(templates.ChestLoot[rand].transform.localScale.x / 2, templates.ChestLoot[rand].transform.localScale.y, templates.ChestLoot[rand].transform.localScale.z), 0.5f));
             Powerups.Add(Loot3);
+
 
 
 
@@ -90,13 +94,16 @@ public class Chest : MonoBehaviour
                     //skip
                     break;
                 case 1:
-                    print("PowerUp 1");
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>().Heal();
                     break;
                 case 2:
-                    
+                    if(dashCount < 3) {
+                        dashCount++;
+                        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().lowerCooldown();
+                    }
                     break;
                 case 3:
-                    
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<Necklace>().hasNecklace = true;
                     break;
                 case 4:
                     

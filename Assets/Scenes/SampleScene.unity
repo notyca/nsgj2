@@ -187,6 +187,7 @@ GameObject:
   - component: {fileID: 173105326}
   - component: {fileID: 173105327}
   - component: {fileID: 173105328}
+  - component: {fileID: 173105329}
   m_Layer: 8
   m_Name: player
   m_TagString: Player
@@ -398,6 +399,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPointsUI: {fileID: 154378948}
+--- !u!114 &173105329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173105321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf3b972e9e8f39142acc2e0dda37d3b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasNecklace: 0
+  NecklaceTemplate: {fileID: 7953389361909959069, guid: e33d8973569e40544b8bd27bf42c854a, type: 3}
+  bullets: []
 --- !u!1 &238129197
 GameObject:
   m_ObjectHideFlags: 0
