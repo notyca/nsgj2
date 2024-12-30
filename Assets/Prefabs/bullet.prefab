@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6568945637120986876}
   - component: {fileID: 3414632170659367669}
   - component: {fileID: 3842089968945329408}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2391120609730188068}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.32, y: 54.76, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c39018b375cf5f4abbbda630943331b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyedBullet: {fileID: 6882834167505044170, guid: b7d9b61822d1ea14c9a39957cf56d263, type: 3}
 --- !u!58 &3414632170659367669
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -136,8 +137,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.30833334
+  m_Offset: {x: -0.0031606853, y: -0.004741013}
+  m_Radius: 0.22141474
 --- !u!50 &3842089968945329408
 Rigidbody2D:
   serializedVersion: 5
@@ -153,7 +154,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
