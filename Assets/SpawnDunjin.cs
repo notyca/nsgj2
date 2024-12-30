@@ -8,6 +8,8 @@ public class SpawnDunjin : MonoBehaviour
 
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.E)) {
+                ActiveDunjin = Instantiate(Dunjins[DunjinNumber], transform.position + new Vector3(-200, 1.5f, 0), Dunjins[DunjinNumber].transform.rotation, transform);
+            }
     }
 }
